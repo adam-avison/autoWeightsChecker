@@ -1,1 +1,25 @@
-Tmp
+autoWeightChecker.py
+- Created by A.Avison (adam.avison@manchester.ac.uk)
+- April 2020
+
+Description:
+Script to check relative weights of 7M and 12M ALMA data prior to joint deconvolution imaging.
+To be run in CASA.
+Usage:
+User interaction is minimal, user defined input are listed under comment #=== USER INPUT ===#
+and are:
+do_outfile_print = True      #--- Allow printing of results to text file. [Boolean (True/False)]
+do_commandline_print = False #--- Just for testing, print some results to command line.  [Boolean (True/False)]
+do_plot = False              #--- Just for testing, plot some diagnostic plots (not very useful).  [Boolean (True/False)]
+SPWS = ['0','1','2','3']     #--- Array of requested SPWs to check. [Array of strings]
+fileType = 'contsub'         #--- Suffix of MS to use, e.g. 'ms', 'split.cal'. [String]
+sourcePath = '/raid1/scratch/aavison/ALMAGAL/TEST_SAMPLE/sources/'  #--- Path to where the data is.
+                                                                    #--- Expected directory structure is below. [String]
+outfileName = 'CheckWeights_Source_SPW'                             #--- If do_outfile_print = True this will be the prefix of .txt files
+                                                    #--- printed the SPW number will be added to this name. [String]
+
+<strong>Once these are set the user can execute this in CASA with execfile('autoWeightChecker.py')</strong>
+
+Expected directory structure:
+The expected directory structure is,
+<sourcePath>/sources/SOURCE_NAME/ARRAY_TYPE/MEASUREMENT_SETS
